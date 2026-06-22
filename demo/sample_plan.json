@@ -1,0 +1,49 @@
+{
+  "request": "Add GET /expenses/summary returning total spending by category",
+  "contribution_mode": "architectural",
+  "memory": {
+    "match_found": true,
+    "confidence": 0.67,
+    "decision_excerpt": "Keep spending calculations out of routes, preserve the service and data-access boundaries, and avoid duplicating existing logic.",
+    "module_hints": ["app/models.py", "app/routes.py", "app/service.py"],
+    "citations": [
+      {"type": "session", "id": "sess_Honm4Cv3UWoj14QaS0FPC"},
+      {"type": "session", "id": "sess_oZHXDFccvb7vFpMqspSbcbyG"}
+    ]
+  },
+  "change_packet": {
+    "capability": {
+      "status": "likely_exists",
+      "evidence": [
+        {"module": "app/service.py", "matched_symbols": ["category", "summary"]},
+        {"module": "app/repository.py", "matched_symbols": ["category", "summary"]},
+        {"module": "app/routes.py", "matched_symbols": ["summary"]}
+      ]
+    },
+    "likely_change_targets": [
+      {"module": "app/service.py", "score": 33.0, "matched_terms": ["category", "expense", "summary"], "memory_hint": true},
+      {"module": "app/repository.py", "score": 31.0, "matched_terms": ["category", "expense", "summary"], "memory_hint": false},
+      {"module": "app/routes.py", "score": 24.0, "matched_terms": ["expense", "summary"], "memory_hint": true}
+    ],
+    "recommended_reads": ["app/service.py", "app/repository.py"],
+    "initial_reads": [
+      {"module": "app/service.py", "source_tokens": 376},
+      {"module": "app/repository.py", "source_tokens": 397}
+    ],
+    "neighbor_hints": [
+      {"target": "app/service.py", "module": "app/models.py", "relation": "imports"},
+      {"target": "app/service.py", "module": "app/routes.py", "relation": "imported_by"},
+      {"target": "app/repository.py", "module": "app/models.py", "relation": "imports"}
+    ],
+    "expansion_policy": "Neighbors are metadata only. Read one additional file only for an unresolved symbol, contract, or failing test."
+  },
+  "token_cost": {
+    "full_repository": 3076,
+    "focused_change_packet": 502,
+    "recommended_source": 773,
+    "focused_total": 1275,
+    "difference": 1801,
+    "difference_percent": 58.6
+  },
+  "instruction": "Verify the existing capability before editing. Read only recommended_reads."
+}

@@ -1,0 +1,8 @@
+networkx>=3.2,<4
+
+# Persistent architectural decision memory.
+parcle
+
+# Enter Code connects to the architectural-memory tools over local stdio MCP.
+# Keep the stable v1 line until the MCP Python SDK v2 reaches stable release.
+mcp>=1.27,<2

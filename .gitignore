@@ -1,0 +1,10 @@
+.env
+.enter/settings.local.json
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.pytest_cache/
+*.db
+graph*.html
+graph*.json

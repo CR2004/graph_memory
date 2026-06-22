@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "architectural-memory": {
+      "args": ["enter_mcp_server.py"],
+      "command": "./.venv/bin/python",
+      "type": "stdio"
+    }
+  }
+}

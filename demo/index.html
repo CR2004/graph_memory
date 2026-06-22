@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07130f">
+  <title>Architectural Memory — Change Intelligence</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Architectural Memory home">
+      <span class="brand-mark"><i></i><i></i><i></i></span>
+      <span>Architectural Memory</span>
+    </a>
+    <div class="top-meta">
+      <span class="status-dot"></span>
+      <span id="project-label">vibe_workspace</span>
+      <span class="mode-pill">PARCLE × AST</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="kicker">Change intelligence for vibe-coded systems</div>
+        <h1>Know <em>where</em> to change<br>before reading everything.</h1>
+        <p>Semantic memory recovers why the system exists. Static analysis proves where the next change belongs.</p>
+      </div>
+      <div class="hero-stat" aria-label="Context reduction">
+        <span class="hero-stat-label">Context avoided</span>
+        <strong id="hero-saving">58.6%</strong>
+        <span id="hero-token-caption">1,801 tokens never entered the context window</span>
+      </div>
+    </section>
+
+    <section id="live-panel" class="panel live-panel">
+      <div class="live-heading">
+        <div>
+          <span class="eyebrow">Act 1 · Build normally</span>
+          <h2>Watch a fresh project become a graph</h2>
+        </div>
+        <div class="live-controls"><span id="live-status" class="run-status">watching</span><button id="copy-command" class="cancel-button">Copy Enter command</button></div>
+      </div>
+      <div class="observer-command"><span>Run in your terminal</span><code id="enter-command">Loading command…</code></div>
+      <div class="live-layout">
+        <div class="live-visual">
+          <svg id="live-graph" viewBox="0 0 760 410" role="img" aria-label="Live growing architecture graph">
+            <defs><marker id="live-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z"></path></marker></defs>
+            <g id="live-edges"></g><g id="live-nodes"></g>
+          </svg>
+          <div class="live-metrics">
+            <div><span>Modules</span><strong id="live-modules">0</strong></div>
+            <div><span>Dependencies</span><strong id="live-edges-count">0</strong></div>
+            <div><span>Actual Enter tokens</span><strong id="live-tokens">0</strong></div>
+            <div><span>Latest focused saving</span><strong id="live-saved">waiting</strong></div>
+          </div>
+        </div>
+        <div class="terminal-wrap">
+          <div class="terminal-title"><span></span>observer · hackathon_workspace</div>
+          <div id="live-console" class="live-console">
+            <p>Start Enter with the command above.</p>
+            <p>Use a small first prompt to create the project.</p>
+            <p>Nodes and imports will appear here automatically.</p>
+            <p class="muted-line">The observer itself uses zero Enter credits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prompt-panel panel repeated-panel">
+      <div class="prompt-label"><span>02</span> Analyze the repeated change</div>
+      <textarea id="request" rows="2" spellcheck="false">Add GET /expenses/summary returning total spending by category</textarea>
+      <div class="prompt-actions">
+        <button id="sample-button" class="button ghost">Replay sample</button>
+        <button id="analyze-button" class="button primary"><span>Analyze next change</span><b>→</b></button>
+      </div>
+      <div id="error" class="error" role="alert"></div>
+    </section>
+
+    <section class="pipeline" aria-label="Planning pipeline">
+      <div class="pipeline-step active"><span>1</span><div><b>Intent</b><small>Parcle memory</small></div></div>
+      <i></i>
+      <div class="pipeline-step active"><span>2</span><div><b>Locate</b><small>AST symbols</small></div></div>
+      <i></i>
+      <div class="pipeline-step active"><span>3</span><div><b>Focus</b><small>Dependency graph</small></div></div>
+      <i></i>
+      <div class="pipeline-step active"><span>4</span><div><b>Act</b><small>Budgeted context</small></div></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="panel memory-card">
+        <div class="panel-heading">
+          <div><span class="eyebrow">Semantic memory</span><h2>Intent recovered</h2></div>
+          <div class="confidence"><strong id="confidence">67%</strong><span>confidence</span></div>
+        </div>
+        <blockquote id="decision"></blockquote>
+        <div class="citations" id="citations"></div>
+      </article>
+
+      <article class="panel capability-card">
+        <div class="panel-heading">
+          <div><span class="eyebrow">Duplicate prevention</span><h2>Capability check</h2></div>
+          <span id="capability-badge" class="capability-badge">Already exists</span>
+        </div>
+        <div id="evidence" class="evidence-list"></div>
+      </article>
+
+      <article class="panel graph-card">
+        <div class="panel-heading">
+          <div><span class="eyebrow">Structural ground truth</span><h2>Change neighborhood</h2></div>
+          <div class="legend"><span class="read"></span>Read first <span class="target"></span>Target <span class="hint"></span>Hint</div>
+        </div>
+        <svg id="architecture-graph" viewBox="0 0 760 410" role="img" aria-label="Highlighted module dependency graph">
+          <defs><marker id="graph-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><path d="M0 0L8 3L0 6Z"></path></marker></defs>
+          <g id="graph-edges"></g><g id="graph-nodes"></g>
+        </svg>
+      </article>
+
+      <article class="panel packet-card">
+        <div class="panel-heading"><div><span class="eyebrow">Agent change packet</span><h2>Read two files, not twelve</h2></div><span class="tiny-pill">progressive</span></div>
+        <div id="target-list" class="target-list"></div>
+        <div class="expansion"><span>Expansion rule</span><p id="expansion-policy"></p></div>
+      </article>
+
+      <article class="panel token-card">
+        <div class="panel-heading"><div><span class="eyebrow">Measured context</span><h2>Smaller input. Same evidence.</h2></div></div>
+        <div class="token-bars">
+          <div class="token-row"><div><span>Full repository</span><b id="full-tokens">3,076</b></div><div class="bar"><i class="full" id="full-bar"></i></div></div>
+          <div class="token-row"><div><span>Focused packet + source</span><b id="focused-tokens">1,275</b></div><div class="bar"><i class="focused" id="focused-bar"></i></div></div>
+        </div>
+        <div class="token-breakdown"><span>Planner packet <b id="packet-tokens">502</b></span><span>Selected source <b id="source-tokens">773</b></span><span>Avoided <b id="saved-tokens">1,801</b></span></div>
+      </article>
+    </section>
+
+    <footer><span>PARCLE remembers intent.</span><span>The graph proves structure.</span><strong>The agent reads less.</strong></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

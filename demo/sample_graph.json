@@ -1,0 +1,28 @@
+{
+  "project_root": "vibe_workspace",
+  "modules": [
+    "app/__init__.py",
+    "app/database.py",
+    "app/main.py",
+    "app/models.py",
+    "app/repository.py",
+    "app/routes.py",
+    "app/service.py",
+    "tests/conftest.py",
+    "tests/test_budget.py",
+    "tests/test_expenses.py",
+    "tests/test_summary.py"
+  ],
+  "dependencies": [
+    {"source": "app/main.py", "target": "app/database.py"},
+    {"source": "app/main.py", "target": "app/routes.py"},
+    {"source": "app/repository.py", "target": "app/models.py"},
+    {"source": "app/routes.py", "target": "app/database.py"},
+    {"source": "app/routes.py", "target": "app/models.py"},
+    {"source": "app/routes.py", "target": "app/service.py"},
+    {"source": "app/service.py", "target": "app/models.py"},
+    {"source": "app/service.py", "target": "app/repository.py"},
+    {"source": "tests/conftest.py", "target": "app/database.py"},
+    {"source": "tests/conftest.py", "target": "app/routes.py"}
+  ]
+}
