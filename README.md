@@ -1,9 +1,13 @@
 # Architectural Memory Graph
 
-This project gives vibe-coded Python projects a memory. Static AST
-analysis supplies ground truth about modules, definitions, and imports; Parcle
-stores the intent behind those modules so a future coding prompt can discover
-prior decisions before generating conflicting code.
+Architectural Memory Graph is a hybrid memory and change-planning layer for
+vibe-coded Python projects. Parcle retrieves semantic memory—what earlier
+prompts decided and why—while local AST analysis derives the repository's
+current modules, symbols, and imports without sending source code to Parcle.
+Our contribution is the bridge between those layers: it matches remembered
+intent to the live dependency graph, detects existing capabilities, ranks the
+minimum files an agent should inspect, and produces a token-budgeted change
+packet that reduces unnecessary context and duplicate implementations.
 
 The system keeps those two layers deliberately separate:
 
